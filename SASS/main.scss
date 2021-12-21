@@ -1,0 +1,115 @@
+@import 'mixins';
+@import 'variables';
+
+
+body{
+	margin:auto 0;
+	font-family: arial;
+}
+/*Navbar*/
+@include zone();
+.sticky{
+	position: fixed;
+	top:0;
+	width:100%;
+	z-index: 999999;
+    .navbar{
+        display: flex;
+        font-size: 0.7em;
+        flex-wrap: wrap;
+        list-style-type: none;
+        margin: 0;
+        li{
+            padding: 20px;
+            a{
+                text-decoration: none;
+                color:$white;
+            }
+            .puss-right{
+                margin-left: auto;
+            }
+            .mr4{
+                margin-right: 40px;
+            }
+        }
+    }
+}
+/*Hero banner*/
+.Hero-banner{
+	display: flex;
+	height: 70vh;
+	align-items: center;
+	justify-content: center;
+    margin-top: 50px;
+    .bannerImg{
+        width:100%;
+        max-width: 450px;
+    }
+}
+/*Project Grid*/
+.grid-container{
+	display: grid;
+	grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+	gap: 15px;
+	padding: 50px 50px;
+    .box {
+        background-color: $black;
+        padding: 90px;
+        margin: 20px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        &:hover {
+            -webkit-transform: rotate(-7deg);
+            -moz-transform: rotate(-7deg);
+            -o-transform: rotate(-7deg);
+            transform: rotate(-7deg);
+        }
+    }
+}
+/*footer*/
+footer{
+	padding: 10px;
+    p{
+        text-align: center;
+        margin: 0;
+        font-size: 0.7em;
+    }
+}
+/***********************************************************************
+ *  Yellow Background
+ **********************************************************************/
+.yellow{
+    background: #F3AAAA; /* Old browsers */
+    background: -moz-linear-gradient(top, #F3AAAA 0%, #febf04 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F3AAAA), color-stop(100%,#febf04)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* IE10+ */
+    background: linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* W3C */
+}
+/***********************************************************************
+ *  Blue Background
+ **********************************************************************/
+.blue{
+    background: #7abcff; /* Old browsers */
+    background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
+    background: linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
+}
+
+
+@media (max-width:600px){
+	.navbar{
+        font-size: 0.5em;
+        padding: 0;
+    }
+    .grid-container{
+        grid-template-columns: repeat(auto-fill, minmax(250px, 100%)) !important;
+    }
+
+}
